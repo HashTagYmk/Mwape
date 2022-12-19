@@ -41,7 +41,7 @@ function get_all_bookings($db_connection){
                     echo "<td>" . $row['date'] . "</td>";
                     echo "<td>" . $row['guest_no'] . "</td>";
                     echo "<td>" . $row['status'] . "</td>";
-                    echo "<td> --edit booking </td>";
+                    echo "<td><a href='../scripts/booking.delete.process.php?booking=".$row['id']."' class='link-primary'>--delete booking</a></td>";
                 echo "</tr>";
             }
             $result->free();
@@ -65,7 +65,7 @@ function get_my_bookings($id, $db_connection){
                     echo "<td>" . $row['date'] . "</td>";
                     echo "<td>" . $row['guest_no'] . "</td>";
                     echo "<td>" . $row['status'] . "</td>";
-                    echo "<td> --edit booking </td>";
+                    echo "<td><a href='../scripts/booking.delete.process.php?booking=".$row['id']."' class='link-primary'>--delete booking</a></td>";
                 echo "</tr>";
             }
             $result->free();

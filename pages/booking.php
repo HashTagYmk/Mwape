@@ -52,7 +52,7 @@ include_once "../api/get_table_data.php";
 
 <script>
     $(document).ready(function () {
-        $('#booking').DataTable();
+        $('#bookingtable').DataTable();
     });
 </script>
 
