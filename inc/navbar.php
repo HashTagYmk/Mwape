@@ -17,7 +17,7 @@
         <ul class="nav">
             <?php
             if (isset($_SESSION['email'])) {
-              echo '<li class="nav-item"><a href="/Mwape/pages/dashboard.php" class="nav-link link-light px-2">'.$user['first_name'].' '.$user['last_name'].'</a></li>
+              echo '<li class="nav-item"><a href="/Mwape/pages/account.php" class="nav-link link-light px-2">'.$user['first_name'].' '.$user['last_name'].'</a></li>
               <li class="nav-item"><a href="/Mwape/scripts/logout.process.php" class="nav-link link-light px-2">Logout</a></li>';
             } else {
               echo '<li class="nav-item"><a href="/Mwape/pages/login.php" class="nav-link link-light px-2">Login</a></li>

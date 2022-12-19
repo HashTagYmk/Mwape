@@ -5,7 +5,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard - <?php echo $user['email']; ?></title>
+    <title>Account - <?php echo $user['email']; ?></title>
 
     <?php include_once "../inc/head.php"; ?>
     

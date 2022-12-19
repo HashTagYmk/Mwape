@@ -3,7 +3,7 @@
 session_start();
 
 if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
-    header("location: ../pages/dashboard.php");
+    header("location: ../pages/account.php");
     exit;
 }
 
