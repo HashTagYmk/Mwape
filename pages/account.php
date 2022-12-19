@@ -5,7 +5,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Account - <?php echo $user['email']; ?></title>
+    <title><?php echo $user['email']; ?></title>
 
     <?php include_once "../inc/head.php"; ?>
     
@@ -15,7 +15,7 @@
 <?php include_once "../inc/navbar.php"; ?>
 
 <div class="container p-3">
-    this is the dasboard.
+    this is your account setting page.
 </div>
 
 
