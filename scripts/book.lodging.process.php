@@ -28,7 +28,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         $stmt->bind_param("ssssss", $user_id,$location_id, $date, $guest_no, $status, $type);
 
         $status = "pending";
-        $type = "location";
+        $type = "lodging";
         
         if($stmt->execute()){
             header("location: ../pages/booking.php?success=bookingcreated");

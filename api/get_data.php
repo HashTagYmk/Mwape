@@ -132,12 +132,28 @@ function get_lodging($db_connection){
                         }
                     echo '</p>';
                     echo '<p>ZMW '.$row['price'].'</p>';
-                    echo '<a href="book.form.php?location='.$row['id'].'" class="btn btn-primary">Book Now</a>';
+                    echo '<a href="book.form.php?lodge='.$row['id'].'" class="btn btn-primary">Book Now</a>';
                 echo '</div>';
             }
             $result->free();
         } else {
             echo "No records found matching your request";
+        }
+    }
+}
+
+function get_lodge($id, $db_connection) {
+    $sql = "SELECT * FROM lodging WHERE id = ?";
+
+    if($stmt = $db_connection->prepare($sql)){
+        $stmt->bind_param("s", $id);
+
+        if($stmt->execute()){
+            $result = $stmt->get_result();
+            if($result->num_rows == 1){
+                $row = $result->fetch_array(MYSQLI_ASSOC);
+                return $row;
+            }
         }
     }
 }
