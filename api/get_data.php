@@ -113,3 +113,31 @@ function get_gallery_for_carousel($db_connection) {
         }
     }
 }
+
+function get_lodging($db_connection){
+    $sql = "SELECT * FROM lodging";
+    if($result = $db_connection->query($sql)){
+        if($result->num_rows > 0){
+            while($row = $result->fetch_array()){
+                echo '<div class="col-md shadow-sm p-3 mx-2 mb-5 bg-body rounded">';
+                    echo '<img src="../'.$row['image'].'" class="mb-1" alt="'.$row['name'].'" style="height: 200px;">';
+                    echo '<h5><i class="bi bi-geo-alt"></i> '.$row['name'].'</h5>';
+                    echo '<p>'.$row['description'].'</p>';
+                    echo '<p>';
+                        for($i = 1; $i <= $row['rating']; $i++) {
+                            echo '<i class="bi bi-star-fill"></i>';
+                        }
+                        for($i = 1; $i <= (5 - $row['rating']); $i++) {
+                            echo '<i class="bi bi-star"></i>';
+                        }
+                    echo '</p>';
+                    echo '<p>ZMW '.$row['price'].'</p>';
+                    echo '<a href="book.form.php?location='.$row['id'].'" class="btn btn-primary">Book Now</a>';
+                echo '</div>';
+            }
+            $result->free();
+        } else {
+            echo "No records found matching your request";
+        }
+    }
+}

@@ -20,6 +20,7 @@
             <ul class="list-unstyled">
                 <li><a href="/Mwape" class="link-light text-decoration-none">Home</a></li>
                 <li><a href="/Mwape/pages/location.php" class="link-light text-decoration-none">Locations</a></li>
+                <li><a href="/Mwape/pages/lodging.php" class="link-light text-decoration-none">Lodging</a></li>
                 <li><a href="/Mwape/index.php#services" class="link-light text-decoration-none">Services</a></li>
                 <li><a href="/Mwape/pages/gallery.php" class="link-light text-decoration-none">Gallery</a></li>
             </ul>

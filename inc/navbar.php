@@ -3,6 +3,7 @@
         <ul class="nav me-auto">
             <li class="nav-item"><a href="/Mwape/" class="nav-link link-light px-2">Home</a></li>
             <li class="nav-item"><a href="/Mwape/pages/location.php" class="nav-link link-light px-2">Locations</a></li>
+            <li class="nav-item"><a href="/Mwape/pages/lodging.php" class="nav-link link-light px-2">Lodging</a></li>
             <li class="nav-item"><a href="/Mwape/index.php#services" class="nav-link link-light px-2">Services</a></li>
             <li class="nav-item"><a href="/Mwape/pages/gallery.php" class="nav-link link-light px-2">Gallery</a></li>
             <?php
