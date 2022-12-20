@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 19, 2022 at 05:01 PM
+-- Generation Time: Dec 20, 2022 at 04:48 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.6
 
@@ -106,6 +106,23 @@ INSERT INTO `locations` (`id`, `name`, `description`, `image`, `price`, `rating`
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `lodging`
+--
+
+CREATE TABLE `lodging` (
+  `id` int(11) NOT NULL,
+  `name` varchar(60) NOT NULL,
+  `description` longtext NOT NULL,
+  `image` text NOT NULL,
+  `price` double NOT NULL,
+  `rating` float NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `modified` datetime NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `users`
 --
 
@@ -155,6 +172,13 @@ ALTER TABLE `locations`
   ADD KEY `user_id` (`user_id`);
 
 --
+-- Indexes for table `lodging`
+--
+ALTER TABLE `lodging`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `user_id` (`user_id`);
+
+--
 -- Indexes for table `users`
 --
 ALTER TABLE `users`
@@ -180,6 +204,12 @@ ALTER TABLE `gallery`
 -- AUTO_INCREMENT for table `locations`
 --
 ALTER TABLE `locations`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
+-- AUTO_INCREMENT for table `lodging`
+--
+ALTER TABLE `lodging`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
