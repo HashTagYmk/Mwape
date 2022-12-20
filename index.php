@@ -20,7 +20,9 @@ if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true) {
     <title>Home</title>
 
     <?php include_once "inc/head.php"; ?>
-    
+    <link rel="stylesheet" href="css/popup.css">
+
+
 </head>
 <body>
 
@@ -33,7 +35,8 @@ if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true) {
             <div class="col-lg-6 mx-auto">
             <br>
             <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
-                <a class="btn btn-dark" href="https://www.youtube.com/watch?v=SAqb1xnKUnw" role="button">Watch Video</a>
+                <a class="btn btn-dark video" 
+                href="https://www.youtube.com/watch?v=SAqb1xnKUnw" role="button">Watch Video</a>
             </div>
             </div>
         </div>
@@ -115,6 +118,12 @@ if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true) {
 
 <?php include_once "inc/footer.php"; ?>
 <?php include_once "inc/foot.php"; ?>
-
+<script src="js/popup.js"></script>
+<script>
+$('.video').magnificPopup({
+  type: 'iframe'
+  // other options
+});
+</script>
 </body>
 </html>
