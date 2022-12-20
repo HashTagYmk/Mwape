@@ -46,7 +46,7 @@ function get_all_bookings($db_connection){
                     echo "<td>" . $row['guest_no'] . "</td>";
                     echo "<td>" . ($row['guest_no'] * $s['price']) . "</td>";
                     echo "<td>" . $row['status'] . "</td>";
-                    echo "<td><a href='../scripts/booking.delete.process.php?booking=".$row['id']."' class='link-primary'>--delete</a></td>";
+                    echo "<td><a href='../scripts/booking.approve.process.php?booking=".$row['id']."' class='link-primary'>--approve</a>, <a href='../scripts/booking.delete.process.php?booking=".$row['id']."' class='link-primary'>--delete</a></td>";
                 echo "</tr>";
             }
             $result->free();
