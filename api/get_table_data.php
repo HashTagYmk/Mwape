@@ -33,9 +33,9 @@ function get_all_bookings($db_connection){
         if($result->num_rows > 0){
             while($row = $result->fetch_array()){
                 if ($row['type'] == 'location'){
-                    $s = get_location($row['location_id'], $db_connection);
+                    $s = get_location($row['s_id'], $db_connection);
                 } else {
-                    $s = get_lodge($row['location_id'], $db_connection);
+                    $s = get_lodge($row['s_id'], $db_connection);
                 }
                 $user = get_profile_by_id($row['user_id'], $db_connection);
                 echo "<tr>";
@@ -63,9 +63,9 @@ function get_my_bookings($id, $db_connection){
         if($result->num_rows > 0){
             while($row = $result->fetch_array()){
                 if ($row['type'] == 'location'){
-                    $s = get_location($row['location_id'], $db_connection);
+                    $s = get_location($row['s_id'], $db_connection);
                 } else {
-                    $s = get_lodge($row['location_id'], $db_connection);
+                    $s = get_lodge($row['s_id'], $db_connection);
                 }
                 echo "<tr>";
                     echo "<td>" . $row['id'] . "</td>";
