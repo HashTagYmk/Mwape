@@ -44,6 +44,7 @@ function get_all_bookings($db_connection){
                     echo "<td>" . $user['first_name']." ". $user['last_name']. "</td>";
                     echo "<td>" . $row['date'] . "</td>";
                     echo "<td>" . $row['guest_no'] . "</td>";
+                    echo "<td>" . ($row['guest_no'] * $s['price']) . "</td>";
                     echo "<td>" . $row['status'] . "</td>";
                     echo "<td><a href='../scripts/booking.delete.process.php?booking=".$row['id']."' class='link-primary'>--delete</a></td>";
                 echo "</tr>";
@@ -72,6 +73,7 @@ function get_my_bookings($id, $db_connection){
                     echo "<td>" . $s['name'] . "</td>";
                     echo "<td>" . $row['date'] . "</td>";
                     echo "<td>" . $row['guest_no'] . "</td>";
+                    echo "<td>" . ($row['guest_no'] * $s['price']) . "</td>";
                     echo "<td>" . $row['status'] . "</td>";
                     echo "<td><a href='../scripts/booking.delete.process.php?booking=".$row['id']."' class='link-primary'>--delete booking</a></td>";
                 echo "</tr>";

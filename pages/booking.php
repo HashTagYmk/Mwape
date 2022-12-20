@@ -32,6 +32,7 @@ include_once "../api/get_table_data.php";
                 ?>
                 <th>Booked for</th>
                 <th>No. of Guests</th>
+                <th>price (ZMW)</th>
                 <th>Status</th>
                 <th>--</th>
             </tr>
