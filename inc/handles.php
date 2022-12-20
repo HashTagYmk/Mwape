@@ -107,5 +107,8 @@
         else if ($_GET["success"] == "bookingdeleted") {
             echo '<div class="alert alert-success" role="alert"> Your booking has been deleted! </div>';
         }
+        else if ($_GET["success"] == "bookingapproved") {
+            echo '<div class="alert alert-success" role="alert"> Your booking has been approved! </div>';
+        }
     }
 ?>

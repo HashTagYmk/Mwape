@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 20, 2022 at 04:48 PM
+-- Generation Time: Dec 20, 2022 at 06:07 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.6
 
@@ -30,20 +30,21 @@ SET time_zone = "+00:00";
 CREATE TABLE `booking` (
   `id` int(11) NOT NULL,
   `user_id` int(11) NOT NULL,
-  `location_id` int(11) NOT NULL,
+  `s_id` int(11) NOT NULL,
   `date` date NOT NULL,
   `guest_no` int(11) NOT NULL,
   `status` varchar(60) NOT NULL,
-  `added` datetime NOT NULL DEFAULT current_timestamp()
+  `added` datetime NOT NULL DEFAULT current_timestamp(),
+  `type` varchar(30) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `booking`
 --
 
-INSERT INTO `booking` (`id`, `user_id`, `location_id`, `date`, `guest_no`, `status`, `added`) VALUES
-(1, 1, 3, '2022-12-23', 2, 'pending', '2022-12-19 15:59:06'),
-(2, 2, 3, '2022-12-20', 1, 'pending', '2022-12-19 15:59:54');
+INSERT INTO `booking` (`id`, `user_id`, `s_id`, `date`, `guest_no`, `status`, `added`, `type`) VALUES
+(1, 1, 3, '2022-12-23', 2, 'pending', '2022-12-19 15:59:06', 'location'),
+(2, 2, 3, '2022-12-20', 1, 'pending', '2022-12-19 15:59:54', 'location');
 
 -- --------------------------------------------------------
 
@@ -154,7 +155,6 @@ INSERT INTO `users` (`id`, `email`, `first_name`, `last_name`, `phone_no`, `pass
 --
 ALTER TABLE `booking`
   ADD PRIMARY KEY (`id`),
-  ADD KEY `location_id` (`location_id`),
   ADD KEY `user_id` (`user_id`);
 
 --
@@ -226,7 +226,6 @@ ALTER TABLE `users`
 -- Constraints for table `booking`
 --
 ALTER TABLE `booking`
-  ADD CONSTRAINT `booking_ibfk_1` FOREIGN KEY (`location_id`) REFERENCES `locations` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   ADD CONSTRAINT `booking_ibfk_2` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --

@@ -32,16 +32,21 @@ function get_all_bookings($db_connection){
     if($result = $db_connection->query($sql)){
         if($result->num_rows > 0){
             while($row = $result->fetch_array()){
-                $location = get_location($row['location_id'], $db_connection);
+                if ($row['type'] == 'location'){
+                    $s = get_location($row['s_id'], $db_connection);
+                } else {
+                    $s = get_lodge($row['s_id'], $db_connection);
+                }
                 $user = get_profile_by_id($row['user_id'], $db_connection);
                 echo "<tr>";
                     echo "<td>" . $row['id'] . "</td>";
-                    echo "<td>" . $location['name'] . "</td>";
+                    echo "<td>" . $s['name'] . "</td>";
                     echo "<td>" . $user['first_name']." ". $user['last_name']. "</td>";
                     echo "<td>" . $row['date'] . "</td>";
                     echo "<td>" . $row['guest_no'] . "</td>";
+                    echo "<td>" . ($row['guest_no'] * $s['price']) . "</td>";
                     echo "<td>" . $row['status'] . "</td>";
-                    echo "<td><a href='../scripts/booking.delete.process.php?booking=".$row['id']."' class='link-primary'>--delete</a></td>";
+                    echo "<td><a href='../scripts/booking.approve.process.php?booking=".$row['id']."' class='link-primary'>--approve</a>, <a href='../scripts/booking.delete.process.php?booking=".$row['id']."' class='link-primary'>--delete</a></td>";
                 echo "</tr>";
             }
             $result->free();
@@ -58,12 +63,17 @@ function get_my_bookings($id, $db_connection){
     if($result = $db_connection->query($sql)){
         if($result->num_rows > 0){
             while($row = $result->fetch_array()){
-                $location = get_location($row['location_id'], $db_connection);
+                if ($row['type'] == 'location'){
+                    $s = get_location($row['s_id'], $db_connection);
+                } else {
+                    $s = get_lodge($row['s_id'], $db_connection);
+                }
                 echo "<tr>";
                     echo "<td>" . $row['id'] . "</td>";
-                    echo "<td>" . $location['name'] . "</td>";
+                    echo "<td>" . $s['name'] . "</td>";
                     echo "<td>" . $row['date'] . "</td>";
                     echo "<td>" . $row['guest_no'] . "</td>";
+                    echo "<td>" . ($row['guest_no'] * $s['price']) . "</td>";
                     echo "<td>" . $row['status'] . "</td>";
                     echo "<td><a href='../scripts/booking.delete.process.php?booking=".$row['id']."' class='link-primary'>--delete booking</a></td>";
                 echo "</tr>";
