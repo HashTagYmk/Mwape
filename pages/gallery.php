@@ -31,7 +31,7 @@ if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true) {
 <div class="container p-3">
     <div class="row d-flex justify-content-center">
         <div class="col-md-6">
-            <form method="get" action="location.php">
+            <form method="get" action="gallery.php">
                 <input class="form-control" type="text" name="search" id="search" placeholder="What are you looking for?">
             </form>
         </div>
