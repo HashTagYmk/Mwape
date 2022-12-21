@@ -93,41 +93,62 @@ if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true) {
 
     <div id="services" class="p-3">
         <h2 class="text-center">Services</h2>
-        <div class="row d-flex justify-content-center">
-            <div class="col-md-3 text-center shadow p-3 mb-5 mx-1 bg-body rounded">
+        <div class="row">
+            <div class="col-md text-center shadow p-3 mb-5 bg-body rounded">
                 <i class="fas fa-hotel" style="height: 30px; width: 30px;"></i>
                 <h5>Affordable Hotels</h5>
                 <p>Best Prices On 344 Hotels In Zambia, Book Accommodation In Lusaka, Livingstone, Kitwe, Kakumbi, Ndola And More. LOW RATES GUARANTEED!.</p>
             </div>
-            <div class="col-md-3 text-center shadow p-3 mb-5 mx-1 bg-body rounded">
+            <div class="col-md text-center shadow p-3 mb-5 mx-1 bg-body rounded">
                 <i class="fas fa-utensils" style="height: 30px; width: 30px;"></i>
                 <h5>Food And Drinks</h5>
                 <p>Delicious Food, Drinks And Desserts You Need To Try!. See More Ideas About Food, Delicious, Yummy Food.</p>
             </div>
-            <div class="col-md-3 text-center shadow p-3 mb-5 mx-1 bg-body rounded">
+            <div class="col-md text-center shadow p-3 mb-5 mx-1 bg-body rounded">
                 <i class="fas fa-bullhorn" style="height: 30px; width: 30px;"></i>
                 <h5>Safety Guide</h5>
                 <p>We Provide Information On How To Stay Safe And Travel The World With Confidence. Crime, Scams, Health, Local Laws And How To Stay Out Of Trouble.</p>
             </div>
-            <div class="col-md-3 text-center shadow p-3 mb-5 mx-1 bg-body rounded">
+            <div class="col-md text-center shadow p-3 mb-5 mx-1 bg-body rounded">
             <i class="fas fa-plane" style="height: 30px; width: 30px;"></i>
                 <h5>Local Transportation</h5>
                 <p>We've Partnered With Ulendo Taxi Zambia, A Taxi Service That Helps You To Get A Ride In Minutes Via A Mobile App. Request Ulendo Taxi And Get Picked Up By A Nearby Driver.</p>
             </div>
-            <div class="col-md-3 text-center shadow p-3 mb-5 mx-1 bg-body rounded">
+            <div class="col-md text-center shadow p-3 mb-5 mx-1 bg-body rounded">
                 <i class="fas fa-globe-asia" style="height: 30px; width: 30px;"></i>
                 <h5>World Links</h5>
                 <p>Travelways Connections All Around The World Ensure That You Are Always Guided When Planning Your Trip.</p>
             </div>
-            <div class="col-md-3 text-center shadow p-3 mb-5 mx-1 bg-body rounded">
+            <div class="col-md text-center shadow p-3 mb-5 mx-1 bg-body rounded">
                 <i class="fas fa-hiking" style="height: 30px; width: 30px;"></i>
                 <h5>Adventures</h5>
                 <p>Lorem Ipsum Dolor Sit Amet Consectetur, Adipisicing Elit. Inventore Commodi Earum, Quis Voluptate Exercitationem Ut Minima Itaque Iusto Ipsum Corrupti!</p>
             </div>
         </div>
-    </div>
+    </section>
 
-  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </div>
 
 <?php include_once "inc/footer.php"; ?>

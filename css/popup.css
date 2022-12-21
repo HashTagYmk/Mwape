@@ -1,3 +1,65 @@
+/* Servies */
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&family=Livvic:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,900&family=Urbanist:wght@100;200;300;400;500;600;700;800;900&display=swap');
+body{
+    font-family: 'Livvic', sans-serif;
+}
+.section{
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+.bg-color{
+    background-color: #F6F7F9;
+}
+.sub-heading span{
+    color: #106eea;
+    font-weight: 600;
+}
+.sub-heading h2{
+    font-weight: 700;
+    font-family: 'Livvic', sans-serif;
+}
+.service-box{
+    padding: 20px;
+    background-color: #fff;
+    transition: .4s;
+    transform: translateY(0);
+    cursor: pointer;
+}
+.service-content h3{
+    font-size: 24px;
+    font-weight: 700;
+    color: rgb(105, 105, 105);
+}
+.service-box:hover{
+    box-shadow: 0 0 30px #fff;
+    transform: translateY(-.5rem);
+}
+.service-content h3:hover{
+    color: #106eea;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* slider */
 .home .carousel-item{
