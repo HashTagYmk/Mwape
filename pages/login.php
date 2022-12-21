@@ -19,7 +19,10 @@ if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true) {
     <?php include_once "../inc/head.php"; ?>
     
 </head>
-<body>
+<body class="bg-light">
+
+    <?php include_once "../inc/navbar.php"; ?>
+
 <div class="container">
     <div class="row p-5">
         <div class="col-md-3 mx-auto shadow-sm p-3 mb-5 bg-body rounded">

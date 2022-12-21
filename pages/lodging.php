@@ -10,27 +10,38 @@
     <?php include_once "../inc/head.php"; ?>
     
 </head>
-</body>
+<body class="bg-light">
 
 <?php
 
 include_once "../inc/navbar.php";
 include_once "../api/get_data.php";
 
+if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true) {
+    $user = get_profile($_SESSION['email'], $db_connection);
+
+    if($user['is_admin'] == true) {
+        header('location: lodging.manage.php');
+        exit();
+    }
+}
+
 ?>
 
 <div class="container p-3">
-    <?php
-        if (isset($_SESSION['email'])) {
-            if ($user['is_admin'] == true) {
-                echo '<a href="lodging.form.php" class="btn btn-primary">Add Lodging</a>';
-            }
-        }
-    ?>
+<?php include_once "../inc/handles.php"; ?>
+    <div class="row d-flex justify-content-center">
+        <div class="col-md-6">
+            <form method="get" action="lodging.php">
+                <input class="form-control" type="text" name="search" id="search" placeholder="What are you looking for?">
+            </form>
+        </div>
+    </div> 
 </div>
 
+
 <div class="container p-3">
-    <div class="row">
+    <div class="row d-flex justify-content-center">
     <?php get_lodging($db_connection); ?>
     </div>
 </div>

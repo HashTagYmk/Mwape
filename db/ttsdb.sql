@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 20, 2022 at 06:07 PM
+-- Generation Time: Dec 21, 2022 at 02:58 AM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.6
 
@@ -44,7 +44,7 @@ CREATE TABLE `booking` (
 
 INSERT INTO `booking` (`id`, `user_id`, `s_id`, `date`, `guest_no`, `status`, `added`, `type`) VALUES
 (1, 1, 3, '2022-12-23', 2, 'pending', '2022-12-19 15:59:06', 'location'),
-(2, 2, 3, '2022-12-20', 1, 'pending', '2022-12-19 15:59:54', 'location');
+(3, 2, 2, '2022-12-23', 10, 'pending', '2022-12-20 19:50:03', 'location');
 
 -- --------------------------------------------------------
 
@@ -121,6 +121,13 @@ CREATE TABLE `lodging` (
   `modified` datetime NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `lodging`
+--
+
+INSERT INTO `lodging` (`id`, `name`, `description`, `image`, `price`, `rating`, `user_id`, `modified`) VALUES
+(7, 'Taj Pamodzi', 'A luxurious retreat in one the fastest growing and most hospitable cities in Africa, Taj Pamodzi, our 5 star hotel in Lusaka, is the undisputed choice for business and leisure travelers to the sparkling Zambian capital', 'images/1671587829_Superior_Room_-_Twin_3x2.jpg', 2101, 5, 2, '2022-12-21 03:57:09');
+
 -- --------------------------------------------------------
 
 --
@@ -192,7 +199,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `booking`
 --
 ALTER TABLE `booking`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `gallery`
@@ -210,7 +217,7 @@ ALTER TABLE `locations`
 -- AUTO_INCREMENT for table `lodging`
 --
 ALTER TABLE `lodging`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `users`

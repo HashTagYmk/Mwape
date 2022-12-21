@@ -46,7 +46,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                 $stmt->bind_param("ssss", $name, $description, $filelocation, $user_id);
                 
                 if($stmt->execute()){
-                    header("location: ../pages/gallery.php");
+                    header("location: ../pages/gallery.php?success=addedtogallery");
                     exit();
                 } else{
                     header('../pages/gallery.form.php?error=dberror');

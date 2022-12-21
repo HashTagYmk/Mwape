@@ -10,7 +10,7 @@
     <?php include_once "../inc/head.php"; ?>
     
 </head>
-</body>
+<body class="bg-light">
 
 <?php
 

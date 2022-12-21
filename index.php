@@ -25,7 +25,7 @@ if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true) {
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
 </head>
-<body>
+<body class="bg-light">
 
 <?php include_once "inc/navbar.php"; ?>
 
@@ -70,7 +70,7 @@ if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true) {
  </section>
 <!-- image Slider -->
 <div class="container">
-    <div id="header" style="height: 300px;">
+    <div id="header" style="height: 200px;">
         <div class="px-4 py-5 my-5 text-center">
             <h1 class="display-5 fw-bold">Twamilanga Touring Services</h1>
             <div class="col-lg-6 mx-auto">
@@ -85,41 +85,41 @@ if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true) {
     
     <div id="location" class="p-3">
         <h2 class="text-center">Locations</h2>
-        <div class="row">
+        <div class="row d-flex justify-content-center">
         <?php get_three_locations($db_connection); ?>
         </div>
-        <p class="text-center"><a href="pages/location.php" class="link-dark">View more...</a></p>
+        <p class="text-center"><a href="pages/location.php" class="btn btn-primary btn-sm">View more...</a></p>
     </div>
 
     <div id="services" class="p-3">
         <h2 class="text-center">Services</h2>
-        <div class="row">
-            <div class="col-md text-center shadow p-3 mb-5 bg-body rounded">
+        <div class="row d-flex justify-content-center">
+            <div class="col-md-3 text-center shadow p-3 mb-5 mx-1 bg-body rounded">
                 <i class="fas fa-hotel" style="height: 30px; width: 30px;"></i>
                 <h5>Affordable Hotels</h5>
                 <p>Best Prices On 344 Hotels In Zambia, Book Accommodation In Lusaka, Livingstone, Kitwe, Kakumbi, Ndola And More. LOW RATES GUARANTEED!.</p>
             </div>
-            <div class="col-md text-center shadow p-3 mb-5 mx-1 bg-body rounded">
+            <div class="col-md-3 text-center shadow p-3 mb-5 mx-1 bg-body rounded">
                 <i class="fas fa-utensils" style="height: 30px; width: 30px;"></i>
                 <h5>Food And Drinks</h5>
                 <p>Delicious Food, Drinks And Desserts You Need To Try!. See More Ideas About Food, Delicious, Yummy Food.</p>
             </div>
-            <div class="col-md text-center shadow p-3 mb-5 mx-1 bg-body rounded">
+            <div class="col-md-3 text-center shadow p-3 mb-5 mx-1 bg-body rounded">
                 <i class="fas fa-bullhorn" style="height: 30px; width: 30px;"></i>
                 <h5>Safety Guide</h5>
                 <p>We Provide Information On How To Stay Safe And Travel The World With Confidence. Crime, Scams, Health, Local Laws And How To Stay Out Of Trouble.</p>
             </div>
-            <div class="col-md text-center shadow p-3 mb-5 mx-1 bg-body rounded">
+            <div class="col-md-3 text-center shadow p-3 mb-5 mx-1 bg-body rounded">
             <i class="fas fa-plane" style="height: 30px; width: 30px;"></i>
                 <h5>Local Transportation</h5>
                 <p>We've Partnered With Ulendo Taxi Zambia, A Taxi Service That Helps You To Get A Ride In Minutes Via A Mobile App. Request Ulendo Taxi And Get Picked Up By A Nearby Driver.</p>
             </div>
-            <div class="col-md text-center shadow p-3 mb-5 mx-1 bg-body rounded">
+            <div class="col-md-3 text-center shadow p-3 mb-5 mx-1 bg-body rounded">
                 <i class="fas fa-globe-asia" style="height: 30px; width: 30px;"></i>
                 <h5>World Links</h5>
                 <p>Travelways Connections All Around The World Ensure That You Are Always Guided When Planning Your Trip.</p>
             </div>
-            <div class="col-md text-center shadow p-3 mb-5 mx-1 bg-body rounded">
+            <div class="col-md-3 text-center shadow p-3 mb-5 mx-1 bg-body rounded">
                 <i class="fas fa-hiking" style="height: 30px; width: 30px;"></i>
                 <h5>Adventures</h5>
                 <p>Lorem Ipsum Dolor Sit Amet Consectetur, Adipisicing Elit. Inventore Commodi Earum, Quis Voluptate Exercitationem Ut Minima Itaque Iusto Ipsum Corrupti!</p>

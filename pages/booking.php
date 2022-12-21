@@ -10,7 +10,7 @@
     <?php include_once "../inc/head.php"; ?>
     
 </head>
-</body>
+<body class="bg-light">
 
 <?php
 
@@ -20,7 +20,8 @@ include_once "../api/get_table_data.php";
 ?>
 
 <div class="container p-3">
-    <table id="bookingtable" class="table table-striped">
+    <?php include_once "../inc/handles.php"; ?>
+    <table id="bookingtable" class="table table-striped table-responsive">
         <thead>
             <tr>
                 <th>ID</th>

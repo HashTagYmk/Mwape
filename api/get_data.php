@@ -1,11 +1,16 @@
 <?php
 
 function get_locations($db_connection){
-    $sql = "SELECT * FROM locations";
+    if(isset($_GET["search"])) {
+        $keyword = $_GET["search"];
+        $sql = "SELECT * FROM locations WHERE name LIKE '%".$keyword."%' OR description LIKE '%".$keyword."%'";
+    } else { 
+        $sql = "SELECT * FROM locations";
+    }
     if($result = $db_connection->query($sql)){
         if($result->num_rows > 0){
             while($row = $result->fetch_array()){
-                echo '<div class="col-md shadow-sm p-3 mx-2 mb-5 bg-body rounded">';
+                echo '<div class="col-md-3 shadow-sm p-3 mx-2 mb-5 bg-body rounded">';
                     echo '<img src="../'.$row['image'].'" class="mb-1" alt="'.$row['name'].'" style="height: 200px;">';
                     echo '<h5><i class="bi bi-geo-alt"></i> '.$row['name'].'</h5>';
                     echo '<p>'.$row['description'].'</p>';
@@ -73,18 +78,23 @@ function get_location($id, $db_connection) {
 }
 
 function get_gallery($db_connection) {
-    $sql = "SELECT * FROM gallery ORDER BY added DESC";
+    if(isset($_GET["search"])) {
+        $keyword = $_GET["search"];
+        $sql = "SELECT * FROM gallery WHERE name LIKE '%".$keyword."%' OR description LIKE '%".$keyword."%' ORDER BY added DESC";
+    } else { 
+        $sql = "SELECT * FROM gallery ORDER BY added DESC";
+    }
     if($result = $db_connection->query($sql)){
         if($result->num_rows > 0){
             while($row = $result->fetch_array()){
-                echo '<div class="col ">';
+                echo '<div class="col-md-5 shadow p-3 mb-5 mx-1 bg-body rounded">';
                     echo '<div class="row">';
                         echo '<div class="col">';
-                            echo '<img src="../'.$row['image'].'" alt="'.$row['name'].'" style="width: 200px;">';
+                            echo '<img class="img-thumbnail" src="../'.$row['image'].'" alt="'.$row['name'].'">';
                         echo '</div>';
                         echo '<div class="col">';
-                            echo '<h5>'.$row['name'].'</h5>';
-                            echo '<p>'.$row['description'].'</p>';
+                                echo '<h5>'.$row['name'].'</h5>';
+                                echo '<p>'.$row['description'].'</p>';
                         echo '</div>';
                     echo '</div>';
                 echo '</div>';
@@ -115,11 +125,16 @@ function get_gallery_for_carousel($db_connection) {
 }
 
 function get_lodging($db_connection){
-    $sql = "SELECT * FROM lodging";
+    if(isset($_GET["search"])) {
+        $keyword = $_GET["search"];
+        $sql = "SELECT * FROM lodging WHERE name LIKE '%".$keyword."%' OR description LIKE '%".$keyword."%'";
+    } else { 
+        $sql = "SELECT * FROM lodging";
+    }
     if($result = $db_connection->query($sql)){
         if($result->num_rows > 0){
             while($row = $result->fetch_array()){
-                echo '<div class="col-md shadow-sm p-3 mx-2 mb-5 bg-body rounded">';
+                echo '<div class="col-md-3 shadow-sm p-3 mx-2 mb-5 bg-body rounded">';
                     echo '<img src="../'.$row['image'].'" class="mb-1" alt="'.$row['name'].'" style="height: 200px;">';
                     echo '<h5><i class="bi bi-geo-alt"></i> '.$row['name'].'</h5>';
                     echo '<p>'.$row['description'].'</p>';

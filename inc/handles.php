@@ -104,11 +104,29 @@
         else if ($_GET["success"] == "bookingcreated") {
             echo '<div class="alert alert-success" role="alert"> Your booking has been created! </div>';
         }
+        else if ($_GET["success"] == "locationcreated") {
+            echo '<div class="alert alert-success" role="alert"> A new location has been added! </div>';
+        }
+        else if ($_GET["success"] == "lodgingcreated") {
+            echo '<div class="alert alert-success" role="alert"> A new loadging has been added! </div>';
+        }
         else if ($_GET["success"] == "bookingdeleted") {
-            echo '<div class="alert alert-success" role="alert"> Your booking has been deleted! </div>';
+            echo '<div class="alert alert-success" role="alert"> The booking has been deleted! </div>';
+        }
+        else if ($_GET["success"] == "locationdeleted") {
+            echo '<div class="alert alert-success" role="alert"> The location has been deleted! </div>';
+        }
+        else if ($_GET["success"] == "lodgingdeleted") {
+            echo '<div class="alert alert-success" role="alert"> The lodging has been deleted! </div>';
+        }
+        else if ($_GET["success"] == "gallerydeleted") {
+            echo '<div class="alert alert-success" role="alert"> The image has been deleted from gallery! </div>';
         }
         else if ($_GET["success"] == "bookingapproved") {
-            echo '<div class="alert alert-success" role="alert"> Your booking has been approved! </div>';
+            echo '<div class="alert alert-success" role="alert"> The booking has been approved! </div>';
+        }
+        else if ($_GET["success"] == "addedtogallery") {
+            echo '<div class="alert alert-success" role="alert"> An image has been added to the gallery! </div>';
         }
     }
 ?>

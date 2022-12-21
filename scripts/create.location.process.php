@@ -59,7 +59,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                 $stmt->bind_param("ssssss", $name, $description, $price, $rating, $filelocation, $user_id);
                 
                 if($stmt->execute()){
-                    header("location: ../pages/location.php");
+                    header("location: ../pages/location.php?success=locationcreated");
                     exit();
                 } else{
                     header('../pages/location.form.php?error=dberror');
